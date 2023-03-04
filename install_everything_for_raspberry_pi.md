@@ -17,7 +17,7 @@ ls -al
 hostname -I
 ```
 
-Use IP in output or localhost to access Apache.
+Use IP in output or `localhost` to access Apache.
 
 # Install PHP
 
@@ -27,9 +27,9 @@ sudo apt install php -y
 
 ## Testing it out
 
-Create `index.php` in /var/www/html. Write simple code:
+Create `index.php` in `/var/www/html`. Write simple code:
 
-```
+```html
 <?php echo “Hello student in IoT class”;?>
 ```
 
@@ -103,7 +103,7 @@ sudo nano /etc/apache2/ports.conf
 
 Add `Listen 9000` below `Listen 80`.
 
-## Enable PHPMyAdmin site
+## Enable phpMyAdmin site
 
 ```
 sudo a2ensite phpmyadmin.conf
