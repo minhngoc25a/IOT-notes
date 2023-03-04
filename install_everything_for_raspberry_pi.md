@@ -115,7 +115,7 @@ Access phpMyAdmin from the web browser using the port 9000 from the localhost.
 ## Create new phpMyAdmin user
 
 ```
-sudo mysql --user=root –password
+sudo mysql --user=root --password
 ```
 
 In MySQL console:
