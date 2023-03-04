@@ -109,16 +109,19 @@ Upload this code to Arduino:
 ```cpp
 float vout;
 float tempc;
+
 void setup() {
-Serial.begin(9600);
+  Serial.begin(9600);
 }
+
 void loop() {
-vout=analogRead(A0); //Reading the value from sensor
-vout=vout*5/1024.0;
-tempc=vout*100.0; // Storing value in Degree Celsius
-Serial.println(tempc);
-delay(1000);
+  vout = analogRead(A0); // Reading the value from the sensor
+  vout = vout * 5 / 1024.0;
+  tempc = vout * 100.0; // Storing value in Degree Celsius
+  Serial.println(tempc);
+  delay(1000);
 }
+
 ```
 
 ![](/img/2023-03-04-23-26-09.png)
@@ -126,16 +129,19 @@ delay(1000);
 ```python
 import serial
 import MySQLdb
-dbConn = MySQLdb.connect("localhost", "account_db", "password", "IoT_SU") or die("Could not
-connect to the database")
+
+dbConn = MySQLdb.connect("localhost", "account_db", "password", "IoT_SU") or die("Could not connect to the database")
 print(dbConn)
+
 device = "/dev/ttyS1"
-arduino = serial.Serial(device,9600)
-data=arduino.readline()
+arduino = serial.Serial(device, 9600)
+data = arduino.readline()
 print(data)
+
 with dbConn:
-cursor = dbConn.cursor()
-cursor.execute("INSERT INTO DataInfor (Temperature) values (%s)" % (data))
-dbConn.commit()
-cursor.close()
+    cursor = dbConn.cursor()
+    cursor.execute("INSERT INTO DataInfor (Temperature) values (%s)" % (data))
+    dbConn.commit()
+    cursor.close()
+
 ```
