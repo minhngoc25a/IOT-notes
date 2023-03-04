@@ -5,18 +5,18 @@ Two methods:
 * Network (wifi)
 * Serial
 
-![](./Picture1.png)
+![](/img/Picture1.png)
 
-![](./Picture2.png)
+![](/img/Picture2.png)
 
-![](./Picture3.png)
+![](/img/Picture3.png)
 
-![](./Picture4.png)
+![](/img/Picture4.png)
 
 
 Serial communication is the most widely used approach to transfer information between data processing equipment and peripherals.
 
-![](./Picture5.png)
+![](/img/Picture5.png)
 
 # Serial communication
 
@@ -24,7 +24,7 @@ Serial communication is the most widely used approach to transfer information be
 * Serial monitor will work when Arduino is connected to PC using USB cable.
 * Serial is used to upload code to Arduino.
 
-![](./Picture6.png)
+![](/img/Picture6.png)
 
 Serial function:
 * `Serial.begin(<baud rate>)`: Define to use serial communication
@@ -34,7 +34,7 @@ Serial function:
 * `Serial.print(<data log>)` same as `Serial.println(<data log>)` but with second method monitor will print data in each line on monitor display
 * `Serial.write(<data need to send>)`: writes binary data to the serial port
 
-![](2023-03-04-23-16-15.png)
+![](/img/2023-03-04-23-16-15.png)
 
 # Connection between Arduino and Pi
 
@@ -43,7 +43,7 @@ Connection:
     * USB port
     * GPIO: Need a Level shifter module (3.3/5V )
 
-![](2023-03-04-23-17-16.png)
+![](/img/2023-03-04-23-17-16.png)
 
 Checking connection:
 * Open terminal and using command:
@@ -54,7 +54,7 @@ $ ls /dev/tty*
 
 All devices are displayed. In this case, Arduino is /dev/ttyUSB0
 
-![](2023-03-04-23-18-44.png)
+![](/img/2023-03-04-23-18-44.png)
 
 Note:
 * If you have some problem related to permission. Using this command for fixing:
@@ -63,7 +63,7 @@ Note:
 $ sudo adduser <your_username> dialout
 ```
 
-![](2023-03-04-23-19-49.png)
+![](/img/2023-03-04-23-19-49.png)
 
 Install library for Python:
 * Using pyserial library
@@ -78,7 +78,7 @@ $ python3 –m pip install pyserial
 $ sudo apt install python3-pip
 ```
 
-![](2023-03-04-23-21-19.png)
+![](/img/2023-03-04-23-21-19.png)
 
 # Example
 
@@ -88,7 +88,7 @@ Upload this code to Arduino:
 * We select the baud rate (9600)
 * Arduino sends a string with `Serial.println` function
 
-![](2023-03-04-23-22-31.png)
+![](/img/2023-03-04-23-22-31.png)
 
 **Raspberry Pi part:**
 * Import serial library: `import serial`
@@ -96,15 +96,15 @@ Upload this code to Arduino:
 * Read (receive) data: `ser.readline()`
 * Send data: `ser.write`
 
-![](2023-03-04-23-23-29.png)
+![](/img/2023-03-04-23-23-29.png)
 
-![](2023-03-04-23-23-51.png)
+![](/img/2023-03-04-23-23-51.png)
 
-![](2023-03-04-23-24-08.png)
+![](/img/2023-03-04-23-24-08.png)
 
-![](2023-03-04-23-24-22.png)
+![](/img/2023-03-04-23-24-22.png)
 
-![](2023-03-04-23-25-02.png)
+![](/img/2023-03-04-23-25-02.png)
 
 ```cpp
 float vout;
@@ -121,7 +121,7 @@ delay(1000);
 }
 ```
 
-![](2023-03-04-23-26-09.png)
+![](/img/2023-03-04-23-26-09.png)
 
 ```python
 import serial
