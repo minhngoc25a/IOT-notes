@@ -149,4 +149,48 @@ with dbConn:
     dbConn.commit()
     cursor.close()
 ```
+If it returns the error like `Attribute error: __Enter__` then it's due to `with()` incompatibility with Python 3.9 (an old Python version). Use the following Python code instead to test:
+
+```Python
+import MySQLdb
+
+# establish a database connection
+dbConn = MySQLdb.connect("localhost", "root", "123456", "IoT_SU")
+
+# check if the connection was successful
+if not dbConn:
+    print("Could not connect to the database")
+else:
+    print("Database connection established")
+
+# define the data to be inserted
+data = 25
+
+# try to execute the database operation
+try:
+    # create a cursor object
+    cursor = dbConn.cursor()
+
+    # execute the SQL query to insert the data
+    cursor.execute("INSERT INTO DataInfor (Temperature) VALUES (%s)", (data,))
+
+    # commit the changes to the database
+    dbConn.commit()
+
+    # print a success message
+    print("Data inserted successfully")
+
+# handle any potential exceptions that may occur
+except Exception as e:
+    # rollback the changes to the database
+    dbConn.rollback()
+
+    # print an error message
+    print("Error inserting data into the database:", e)
+
+# close the cursor and the database connection
+finally:
+    cursor.close()
+    dbConn.close()
+```
 
