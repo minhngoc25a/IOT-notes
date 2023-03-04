@@ -1,20 +1,20 @@
 # Install Apache2 on Raspberry
 
 ```
-sudo apt install apache2 –y
+sudo apt install apache2 -y
 ```
 
 ## List items in directory
 
 ```
 cd /var/www/html
-ls –al
+ls -al
 ```
 
 ## Get IP address
 
 ```
-hostname –I
+hostname -I
 ```
 
 Use IP in output or localhost to access Apache.
@@ -38,7 +38,7 @@ Access web browser at `localhost/index.php` to test the PHP file.
 # Install MySQL
 
 ```
-sudo apt install mariadb-server php-mysql –y
+sudo apt install mariadb-server php-mysql -y
 sudo service apache2 restart
 ```
 
